@@ -1,13 +1,13 @@
-# Portfolio Webdesign Premium V3
+# Portfolio Webdesign Premium V4
 
-Modifications :
-- visuels projets haute résolution et sans texte intégré ;
-- projet automobile remplacé par Nova Studio ;
-- Web Lab enrichi avec démonstrations visuelles ;
-- ajout d'une section méthode et d'une bande de preuves techniques ;
-- conservation du style dark/violet validé.
+Améliorations V4 :
+- visuels projets entièrement refaits en haute résolution, sans texte intégré ;
+- nouveau hero showcase plus propre ;
+- Web Lab déjà enrichi conservé ;
+- ajout d’une section Suggestions ;
+- projet Nova Studio conservé à la place de l’automobile.
 
-À faire avant utilisation commerciale :
+À faire ensuite :
 - connecter le formulaire ;
-- configurer domaine/Cloudflare/HTTPS ;
-- remplacer les objectifs Lighthouse par de vrais résultats mesurés.
+- configurer Cloudflare / HTTPS ;
+- remplacer les scores cibles par de vrais tests.
