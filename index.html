@@ -1,89 +1,1065 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Création de sites web modernes pour entreprises et commerces.">
 
-    <title>Tom Webdesign | Création de sites web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Création de sites web modernes, rapides et performants pour entreprises, commerces et indépendants.">
+
+    <meta name="theme-color" content="#070707">
+
+    <title>Tom Webdesign — Création de sites web modernes</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <h1>Tom Webdesign</h1>
+    <!-- Fond décoratif -->
 
-        <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projets">Réalisations</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <div class="background-grid"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
 
-<main>
+    <!-- NAVBAR -->
 
-    <section id="accueil" class="hero">
-        <h2>Des sites modernes pour développer votre entreprise.</h2>
+    <header class="header">
 
-        <p>
-            Je crée des sites rapides, modernes et adaptés aux smartphones
-            pour les entreprises, commerces et indépendants.
-        </p>
+        <div class="container navbar">
 
-        <a href="#contact" class="button">Parler de votre projet</a>
-    </section>
+            <a href="#accueil" class="logo">
+                TOM<span>.</span>
+            </a>
 
-    <section id="services">
-        <h2>Mes services</h2>
+            <nav class="desktop-nav">
 
-        <div class="cards">
+                <a href="#services">Services</a>
+                <a href="#realisations">Réalisations</a>
+                <a href="#performance">Performance</a>
+                <a href="#offres">Offres</a>
 
-            <article>
-                <h3>Site vitrine</h3>
-                <p>Présentez votre activité avec un site professionnel et moderne.</p>
-            </article>
+            </nav>
 
-            <article>
-                <h3>Responsive</h3>
-                <p>Un site parfaitement adapté aux téléphones, tablettes et ordinateurs.</p>
-            </article>
+            <a href="#contact" class="nav-cta">
+                Parler de votre projet
+            </a>
 
-            <article>
-                <h3>Performance</h3>
-                <p>Des pages rapides avec une infrastructure moderne et sécurisée.</p>
-            </article>
+            <button
+                class="menu-button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
 
         </div>
-    </section>
 
-    <section id="projets">
-        <h2>Mes réalisations</h2>
+        <div class="mobile-nav">
 
-        <p>Mes premiers projets seront bientôt disponibles.</p>
-    </section>
+            <a href="#services">Services</a>
+            <a href="#realisations">Réalisations</a>
+            <a href="#performance">Performance</a>
+            <a href="#offres">Offres</a>
+            <a href="#contact">Contact</a>
 
-    <section id="contact">
-        <h2>Un projet ?</h2>
+        </div>
 
-        <p>Discutons ensemble de votre futur site web.</p>
+    </header>
 
-        <a href="mailto:contact@example.com" class="button">
-            Me contacter
-        </a>
-    </section>
+    <main>
 
-</main>
+        <!-- HERO -->
 
-<footer>
-    <p>© 2026 Tom Webdesign</p>
-</footer>
+        <section id="accueil" class="hero">
 
-<script src="script.js"></script>
+            <div class="container hero-content">
+
+                <div class="hero-text reveal">
+
+                    <div class="badge">
+
+                        <span></span>
+
+                        Disponible pour de nouveaux projets
+
+                    </div>
+
+                    <h1>
+
+                        Votre entreprise mérite
+                        <span>mieux qu'un site banal.</span>
+
+                    </h1>
+
+                    <p class="hero-description">
+
+                        Je conçois des sites web modernes, rapides et
+                        pensés pour transformer vos visiteurs en clients.
+
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#offres" class="button primary">
+
+                            Découvrir mes offres
+
+                            <span>→</span>
+
+                        </a>
+
+                        <a href="#realisations" class="button secondary">
+
+                            Voir mes réalisations
+
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div>
+                            <strong>100%</strong>
+                            <span>Responsive</span>
+                        </div>
+
+                        <div>
+                            <strong>HTTPS</strong>
+                            <span>Sécurisé</span>
+                        </div>
+
+                        <div>
+                            <strong>90+</strong>
+                            <span>Objectif Lighthouse</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- MOCKUP -->
+
+                <div class="hero-visual reveal">
+
+                    <div class="browser">
+
+                        <div class="browser-top">
+
+                            <div class="browser-dots">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <div class="browser-url">
+
+                                https://votreentreprise.fr
+
+                            </div>
+
+                        </div>
+
+                        <div class="browser-content">
+
+                            <div class="fake-navbar">
+
+                                <strong>STUDIO.</strong>
+
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                            </div>
+
+                            <div class="fake-hero">
+
+                                <div class="fake-tag"></div>
+
+                                <div class="fake-title"></div>
+                                <div class="fake-title second"></div>
+
+                                <div class="fake-paragraph"></div>
+                                <div class="fake-paragraph short"></div>
+
+                                <div class="fake-button"></div>
+
+                            </div>
+
+                            <div class="fake-cards">
+
+                                <div></div>
+                                <div></div>
+                                <div></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card performance-card">
+
+                        <span>Performance</span>
+
+                        <strong>98</strong>
+
+                        <div class="progress">
+
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card secure-card">
+
+                        <div class="secure-icon">✓</div>
+
+                        <div>
+
+                            <strong>Site sécurisé</strong>
+
+                            <span>HTTPS actif</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+
+                <span></span>
+
+                Découvrir
+
+            </div>
+
+        </section>
+
+        <!-- TRUST -->
+
+        <section class="trust-bar">
+
+            <div class="container">
+
+                <p>
+
+                    Des technologies modernes pour des sites
+                    <strong>rapides, fiables et performants.</strong>
+
+                </p>
+
+                <div class="tech-list">
+
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>GitHub</span>
+                    <span>Cloudflare</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SERVICES -->
+
+        <section id="services" class="section">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <span class="eyebrow">MES SERVICES</span>
+
+                    <h2>
+
+                        Tout ce qu'il faut pour
+                        <span>une présence web professionnelle.</span>
+
+                    </h2>
+
+                    <p>
+
+                        De la conception à la mise en ligne,
+                        je vous accompagne pour créer un site efficace,
+                        moderne et adapté à votre entreprise.
+
+                    </p>
+
+                </div>
+
+                <div class="service-grid">
+
+                    <article class="service-card reveal">
+
+                        <div class="service-number">01</div>
+
+                        <div class="service-icon">◈</div>
+
+                        <h3>Site vitrine</h3>
+
+                        <p>
+
+                            Une présence professionnelle qui présente
+                            clairement votre activité, vos services et
+                            permet à vos clients de vous contacter.
+
+                        </p>
+
+                        <ul>
+
+                            <li>Design personnalisé</li>
+                            <li>Responsive mobile</li>
+                            <li>Navigation optimisée</li>
+
+                        </ul>
+
+                    </article>
+
+                    <article class="service-card featured reveal">
+
+                        <div class="popular">POPULAIRE</div>
+
+                        <div class="service-number">02</div>
+
+                        <div class="service-icon">⚡</div>
+
+                        <h3>Performance</h3>
+
+                        <p>
+
+                            Des sites développés avec une attention
+                            particulière portée à la rapidité et
+                            à l'expérience utilisateur.
+
+                        </p>
+
+                        <ul>
+
+                            <li>Optimisation des images</li>
+                            <li>Code léger</li>
+                            <li>Chargement rapide</li>
+
+                        </ul>
+
+                    </article>
+
+                    <article class="service-card reveal">
+
+                        <div class="service-number">03</div>
+
+                        <div class="service-icon">⌁</div>
+
+                        <h3>SEO</h3>
+
+                        <p>
+
+                            Une structure pensée pour aider votre site
+                            à être correctement compris et référencé
+                            par les moteurs de recherche.
+
+                        </p>
+
+                        <ul>
+
+                            <li>Balises SEO</li>
+                            <li>Structure HTML propre</li>
+                            <li>SEO local</li>
+
+                        </ul>
+
+                    </article>
+
+                    <article class="service-card reveal">
+
+                        <div class="service-number">04</div>
+
+                        <div class="service-icon">◇</div>
+
+                        <h3>Sécurité</h3>
+
+                        <p>
+
+                            Mise en place des bonnes pratiques
+                            essentielles pour protéger et sécuriser
+                            votre présence en ligne.
+
+                        </p>
+
+                        <ul>
+
+                            <li>HTTPS</li>
+                            <li>Headers de sécurité</li>
+                            <li>Protection infrastructure</li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PERFORMANCE -->
+
+        <section id="performance" class="section performance">
+
+            <div class="container performance-layout">
+
+                <div class="performance-content reveal">
+
+                    <span class="eyebrow">PERFORMANCE</span>
+
+                    <h2>
+
+                        Un beau site ne suffit pas.
+
+                        <span>Il doit être rapide.</span>
+
+                    </h2>
+
+                    <p>
+
+                        Chaque projet est conçu en gardant
+                        la performance, la compatibilité mobile,
+                        le référencement et les bonnes pratiques
+                        au centre du développement.
+
+                    </p>
+
+                    <div class="performance-features">
+
+                        <div>
+
+                            <span>✓</span>
+
+                            <p>
+                                <strong>Chargement rapide</strong>
+                                Code optimisé et ressources légères.
+                            </p>
+
+                        </div>
+
+                        <div>
+
+                            <span>✓</span>
+
+                            <p>
+                                <strong>Mobile First</strong>
+                                Une expérience fluide sur tous les écrans.
+                            </p>
+
+                        </div>
+
+                        <div>
+
+                            <span>✓</span>
+
+                            <p>
+                                <strong>Infrastructure moderne</strong>
+                                Hébergement performant et HTTPS.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="score-card reveal">
+
+                    <div class="score-header">
+
+                        <div>
+
+                            <span>Analyse</span>
+                            <strong>Lighthouse</strong>
+
+                        </div>
+
+                        <span class="live-dot">
+                            <i></i> Exemple
+                        </span>
+
+                    </div>
+
+                    <div class="scores">
+
+                        <div class="score">
+
+                            <div class="circle">
+
+                                <strong>98</strong>
+
+                            </div>
+
+                            <span>Performance</span>
+
+                        </div>
+
+                        <div class="score">
+
+                            <div class="circle">
+
+                                <strong>100</strong>
+
+                            </div>
+
+                            <span>Accessibilité</span>
+
+                        </div>
+
+                        <div class="score">
+
+                            <div class="circle">
+
+                                <strong>100</strong>
+
+                            </div>
+
+                            <span>Bonnes pratiques</span>
+
+                        </div>
+
+                        <div class="score">
+
+                            <div class="circle">
+
+                                <strong>100</strong>
+
+                            </div>
+
+                            <span>SEO</span>
+
+                        </div>
+
+                    </div>
+
+                    <p class="score-disclaimer">
+
+                        Exemple d'objectifs de performance.
+                        Les résultats réels varient selon chaque projet.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- REALISATIONS -->
+
+        <section id="realisations" class="section projects">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <span class="eyebrow">RÉALISATIONS</span>
+
+                    <h2>
+                        Des designs pensés pour
+                        <span>chaque activité.</span>
+                    </h2>
+
+                </div>
+
+                <div class="projects-grid">
+
+                    <article class="project project-large reveal">
+
+                        <div class="project-image restaurant">
+
+                            <div class="project-browser">
+
+                                <div class="mini-nav">
+                                    <strong>LE DRAGON</strong>
+                                    <span>Restaurant • Vitré</span>
+                                </div>
+
+                                <div class="restaurant-content">
+
+                                    <span>CUISINE ASIATIQUE</span>
+
+                                    <strong>
+                                        Une expérience
+                                        authentique.
+                                    </strong>
+
+                                    <button>Découvrir la carte</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <span>RESTAURANT</span>
+
+                                <h3>Le Dragon</h3>
+
+                            </div>
+
+                            <p>
+
+                                Concept de site vitrine pour un restaurant
+                                et une épicerie asiatique.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="project reveal">
+
+                        <div class="project-image garage">
+
+                            <div class="garage-logo">
+                                V8<span>.</span>
+                            </div>
+
+                            <strong>AUTOMOTIVE</strong>
+
+                            <p>
+                                Performance.<br>
+                                Passion.<br>
+                                Excellence.
+                            </p>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <span>AUTOMOBILE</span>
+                                <h3>V8 Automotive</h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="project reveal">
+
+                        <div class="project-image architecture">
+
+                            <div class="architecture-box">
+
+                                <span>01 — 2026</span>
+
+                                <strong>FORMA</strong>
+
+                                <p>
+                                    Architecture<br>
+                                    & Intérieurs
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <span>ARCHITECTURE</span>
+                                <h3>Forma Studio</h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PROCESS -->
+
+        <section class="section process">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <span class="eyebrow">MÉTHODE</span>
+
+                    <h2>
+
+                        Votre site en
+                        <span>4 étapes.</span>
+
+                    </h2>
+
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item reveal">
+
+                        <span>01</span>
+
+                        <div>
+
+                            <h3>Échange</h3>
+
+                            <p>
+                                Nous discutons de votre activité,
+                                de vos besoins et de vos objectifs.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="timeline-item reveal">
+
+                        <span>02</span>
+
+                        <div>
+
+                            <h3>Conception</h3>
+
+                            <p>
+                                Création de l'identité visuelle
+                                et de la structure du site.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="timeline-item reveal">
+
+                        <span>03</span>
+
+                        <div>
+
+                            <h3>Développement</h3>
+
+                            <p>
+                                Création du site, optimisation mobile
+                                et intégration du contenu.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="timeline-item reveal">
+
+                        <span>04</span>
+
+                        <div>
+
+                            <h3>Mise en ligne</h3>
+
+                            <p>
+                                Configuration du domaine,
+                                HTTPS et publication du site.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- OFFRES -->
+
+        <section id="offres" class="section pricing">
+
+            <div class="container">
+
+                <div class="section-header center reveal">
+
+                    <span class="eyebrow">TARIFS</span>
+
+                    <h2>
+
+                        Une solution adaptée
+                        <span>à votre projet.</span>
+
+                    </h2>
+
+                    <p>
+                        Des tarifs simples et transparents pour démarrer.
+                    </p>
+
+                </div>
+
+                <div class="pricing-grid">
+
+                    <article class="price-card reveal">
+
+                        <div class="price-name">
+
+                            <span>ESSENTIEL</span>
+
+                            <h3>One Page</h3>
+
+                        </div>
+
+                        <div class="price">
+
+                            <strong>À partir de 349 €</strong>
+
+                        </div>
+
+                        <p>
+
+                            Pour les indépendants et petites entreprises
+                            qui souhaitent une présence professionnelle.
+
+                        </p>
+
+                        <ul>
+
+                            <li>✓ Page unique personnalisée</li>
+                            <li>✓ Design responsive</li>
+                            <li>✓ Section services</li>
+                            <li>✓ Coordonnées & contact</li>
+                            <li>✓ SEO de base</li>
+                            <li>✓ Mise en ligne</li>
+
+                        </ul>
+
+                        <a href="#contact" class="button secondary full">
+
+                            Demander un devis
+
+                        </a>
+
+                    </article>
+
+                    <article class="price-card recommended reveal">
+
+                        <div class="recommended-label">
+
+                            RECOMMANDÉ
+
+                        </div>
+
+                        <div class="price-name">
+
+                            <span>PROFESSIONNEL</span>
+
+                            <h3>Site vitrine</h3>
+
+                        </div>
+
+                        <div class="price">
+
+                            <strong>À partir de 599 €</strong>
+
+                        </div>
+
+                        <p>
+
+                            Une solution complète pour présenter
+                            sérieusement votre entreprise sur Internet.
+
+                        </p>
+
+                        <ul>
+
+                            <li>✓ Jusqu'à 5 pages</li>
+                            <li>✓ Design personnalisé</li>
+                            <li>✓ Responsive mobile</li>
+                            <li>✓ Formulaire de contact</li>
+                            <li>✓ SEO optimisé</li>
+                            <li>✓ Performance optimisée</li>
+                            <li>✓ HTTPS</li>
+                            <li>✓ Mise en ligne</li>
+
+                        </ul>
+
+                        <a href="#contact" class="button primary full">
+
+                            Démarrer mon projet
+
+                        </a>
+
+                    </article>
+
+                    <article class="price-card reveal">
+
+                        <div class="price-name">
+
+                            <span>SUR MESURE</span>
+
+                            <h3>Projet avancé</h3>
+
+                        </div>
+
+                        <div class="price">
+
+                            <strong>Sur devis</strong>
+
+                        </div>
+
+                        <p>
+
+                            Pour les projets nécessitant davantage
+                            de fonctionnalités ou un développement spécifique.
+
+                        </p>
+
+                        <ul>
+
+                            <li>✓ Design sur mesure</li>
+                            <li>✓ Pages supplémentaires</li>
+                            <li>✓ Fonctionnalités avancées</li>
+                            <li>✓ Intégrations externes</li>
+                            <li>✓ Accompagnement personnalisé</li>
+
+                        </ul>
+
+                        <a href="#contact" class="button secondary full">
+
+                            Parlons-en
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+                <p class="pricing-note reveal">
+
+                    Les tarifs sont indicatifs et peuvent varier
+                    selon les besoins du projet.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+
+        <section id="contact" class="section contact">
+
+            <div class="container">
+
+                <div class="contact-box reveal">
+
+                    <div class="contact-glow"></div>
+
+                    <span class="eyebrow">VOTRE PROJET</span>
+
+                    <h2>
+
+                        Prêt à donner une nouvelle
+                        <span>dimension à votre entreprise ?</span>
+
+                    </h2>
+
+                    <p>
+
+                        Parlons de votre activité et imaginons
+                        ensemble un site qui vous ressemble.
+
+                    </p>
+
+                    <div class="contact-buttons">
+
+                        <a
+                            href="mailto:contact@example.com"
+                            class="button primary">
+
+                            Me contacter
+
+                            <span>→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div>
+
+                <a href="#accueil" class="logo">
+
+                    TOM<span>.</span>
+
+                </a>
+
+                <p>
+                    Création de sites web modernes,
+                    rapides et performants.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#services">Services</a>
+                <a href="#realisations">Réalisations</a>
+                <a href="#offres">Tarifs</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+
+            <span>© 2026 Tom Webdesign</span>
+
+            <span>
+                Conçu avec passion en France.
+            </span>
+
+        </div>
+
+    </footer>
 
 </body>
+
 </html>
