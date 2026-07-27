@@ -2,21 +2,25 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Démonstrations techniques web."><meta name="theme-color" content="#050610">
 <title>Lab — Tom Webdesign</title>
-<link rel="stylesheet" href="css/style.css">
-<script defer src="js/script.js"></script>
-</head><body><header class="header"><div class="container navbar">
+<link rel="stylesheet" href="css/style.css"><script defer src="js/script.js"></script></head><body><header class="header"><div class="container navbar">
 <a class="logo" href="index.html">TOM<span>.</span><small>WEB DESIGN</small></a>
-<nav class="desktop-nav"><a class="" href="index.html">Accueil</a><a class="" href="services.html">Services</a><a class="" href="projets.html">Réalisations</a><a class="" href="tarifs.html">Tarifs</a><a class="" href="a-propos.html">À propos</a><a class="" href="contact.html">Contact</a><a class="active" href="lab.html">Lab</a></nav>
-<a class="nav-cta" href="contact.html">Parler de votre projet &nbsp; →</a>
-<button class="menu-btn" aria-label="Ouvrir le menu">☰</button>
-</div><nav class="mobile-nav"><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="lab.html">Lab</a></nav></header>
-<main><section class="page-hero"><div class="container reveal"><span class="eyebrow">WEB LAB</span><h1>Le côté technique, <span class="accent">visible.</span></h1><p>Animations, responsive, performance et sécurité.</p></div></section>
-<section class="section"><div class="container lab-grid">
-<article class="lab-card reveal"><h3>Animations</h3><p class="muted">Micro-interactions légères.</p><div class="orb"></div></article>
-<article class="lab-card reveal"><h3>Performance</h3><p class="muted">Les vrais scores Lighthouse seront ajoutés après test.</p></article>
-<article class="lab-card reveal"><h3>Sécurité</h3><p class="muted">HTTPS, TLS, headers et Cloudflare seront affichés après configuration réelle.</p></article>
-<article class="lab-card reveal"><h3>Responsive</h3><p class="muted">Chaque page est pensée pour mobile, tablette et ordinateur.</p></article>
-</div></section></main><footer><div class="container footer-row">
-<a class="logo" href="index.html">TOM<span>.</span><small>WEB DESIGN</small></a>
-<div class="footer-links"><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="contact.html">Contact</a></div>
-</div></footer></body></html>
+<nav class="desktop-nav"><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a class="active" href="lab.html">Lab</a></nav>
+<a class="nav-cta" href="contact.html">Parler de votre projet &nbsp; →</a><button class="menu-btn" aria-label="Ouvrir le menu">☰</button></div>
+<nav class="mobile-nav"><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="lab.html">Lab</a></nav></header>
+<main>
+<section class="page-hero"><div class="container reveal"><span class="eyebrow">WEB LAB</span><h1>Le design attire.<br><span class="accent">La technique fait la différence.</span></h1><p>Une démonstration visuelle de ce que je travaille derrière chaque interface : responsive, performance, code propre, animations et sécurité.</p></div></section>
+
+<section class="section"><div class="container"><div class="lab-grid">
+<article class="lab-card wide reveal"><div class="lab-icon">✦</div><h3>Interface & micro-interactions</h3><p class="muted">Des mouvements discrets pour rendre l’interface plus vivante sans ralentir le site.</p><div class="mini-browser"><div class="mini-bar"><i></i><i></i><i></i></div><div class="mini-screen"><b></b><span></span><span></span></div></div></article>
+<article class="lab-card reveal"><div class="lab-icon">▣</div><h3>Responsive</h3><p class="muted">Une même identité sur tous les écrans.</p><div class="devices"><div class="pc"></div><div class="tab"></div><div class="phone"></div></div></article>
+
+<article class="lab-card reveal"><div class="lab-icon">⚡</div><h3>Performance</h3><p class="muted">Objectifs à remplacer par de vraies mesures après déploiement.</p><div class="gauge-row"><div class="gauge"><span>90+</span><small>Performance</small></div><div class="gauge"><span>90+</span><small>SEO</small></div></div></article>
+<article class="lab-card reveal"><div class="lab-icon">◇</div><h3>Sécurité</h3><p class="muted">Les protections ne sont affichées comme actives qu’après leur configuration et leur test.</p><div class="security-demo"><div>HTTPS <b>À VÉRIFIER</b></div><div>Cloudflare <b>À CONFIGURER</b></div><div>Security headers <b>À TESTER</b></div><div>HSTS <b>APRÈS VALIDATION</b></div></div></article>
+<article class="lab-card reveal"><div class="lab-icon">&lt;/&gt;</div><h3>Code propre</h3><p class="muted">Une base simple et lisible, sans empiler des plugins inutiles.</p><div class="code-window"><em>&lt;section</em> class="hero"<em>&gt;</em><br>&nbsp;&nbsp;<strong>Design. Performance. Clarté.</strong><br><em>&lt;/section&gt;</em></div></article>
+
+<article class="lab-card wide reveal"><div class="lab-icon">⌁</div><h3>Architecture légère</h3><p class="muted">Pour un site vitrine classique : HTML, CSS et JavaScript statiques peuvent offrir une excellente base, avec peu de dépendances et une maintenance simple.</p><div class="trust-strip" style="margin-top:25px"><div class="trust-item"><strong>HTML</strong><span>Structure</span></div><div class="trust-item"><strong>CSS</strong><span>Design</span></div><div class="trust-item"><strong>JS</strong><span>Interactions</span></div><div class="trust-item"><strong>CDN</strong><span>Diffusion</span></div></div></article>
+<article class="lab-card reveal"><div class="lab-icon">◎</div><h3>Accessibilité</h3><p class="muted">Contrastes lisibles, navigation claire, structure logique et prise en compte des préférences de réduction des animations.</p></article>
+</div></div></section>
+
+<section class="section"><div class="container cta reveal"><span class="eyebrow">OBJECTIF</span><h2>Pas seulement un joli site.<br><span class="accent">Un site propre derrière aussi.</span></h2><p>Les résultats techniques affichés sur le portfolio seront basés sur de vrais tests lorsque le domaine, Cloudflare et le déploiement final seront configurés.</p><a class="btn primary" href="contact.html">Parler de mon projet →</a></div></section>
+</main><footer><div class="container footer-row"><a class="logo" href="index.html">TOM<span>.</span><small>WEB DESIGN</small></a><div class="footer-links"><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="contact.html">Contact</a></div></div></footer></body></html>
