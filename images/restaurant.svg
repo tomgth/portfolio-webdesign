@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
-<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#1a0d0a"/><stop offset="1" stop-color="#6b2e22"/></linearGradient><radialGradient id="r"><stop stop-color="#d58a58" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs>
-<rect width="1400" height="760" fill="url(#g)"/><circle cx="1050" cy="250" r="300" fill="url(#r)"/>
-<g opacity=".16" fill="none" stroke="#f0d7c2"><circle cx="1080" cy="250" r="150"/><circle cx="1080" cy="250" r="110"/><path d="M950 250h260M1080 120v260"/></g>
-<text x="90" y="100" fill="#f5eee7" font-family="Arial" font-weight="700" font-size="28">LE DRAGON</text>
-<text x="90" y="305" fill="#c8926f" font-family="Arial" font-size="18" letter-spacing="6">CUISINE ASIATIQUE</text>
-<text x="90" y="390" fill="#fff5ec" font-family="Georgia" font-size="86">Une expérience</text><text x="90" y="475" fill="#fff5ec" font-family="Georgia" font-size="86">authentique.</text>
-<rect x="90" y="535" rx="8" width="200" height="54" fill="#f2e5d9"/><text x="126" y="570" fill="#25130f" font-family="Arial" font-size="18">DÉCOUVRIR LA CARTE</text>
-</svg>
