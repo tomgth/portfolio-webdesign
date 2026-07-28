@@ -174,3 +174,39 @@ const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches
   document.documentElement.addEventListener("mouseleave",()=>cursor.classList.remove("is-visible"));
   document.documentElement.addEventListener("mouseenter",()=>cursor.classList.add("is-visible"));
 })();
+
+
+// V19 — one direct cursor element on every page.
+(() => {
+  const fine = window.matchMedia("(pointer:fine)").matches;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!fine || reduced) return;
+
+  // Remove every previous cursor implementation.
+  document.querySelectorAll(".premium-cursor,.site-cursor-v18,.site-cursor-v19").forEach(el => el.remove());
+
+  const cursor = document.createElement("div");
+  cursor.className = "site-cursor-v19";
+  cursor.setAttribute("aria-hidden","true");
+  document.body.appendChild(cursor);
+
+  const move = (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+    cursor.classList.add("is-visible");
+  };
+  window.addEventListener("pointermove", move, {passive:true});
+
+  const interactive = "a,button,summary,.project-card,.service,.sector-card,.offer,.feature-chips span,.faq-list details";
+  document.addEventListener("pointerover", e => {
+    if (e.target.closest(interactive)) cursor.classList.add("is-hovering");
+  }, {passive:true});
+  document.addEventListener("pointerout", e => {
+    if (e.target.closest(interactive) && !e.relatedTarget?.closest?.(interactive)) {
+      cursor.classList.remove("is-hovering");
+    }
+  }, {passive:true});
+
+  document.documentElement.addEventListener("mouseleave", () => cursor.classList.remove("is-visible"));
+  document.documentElement.addEventListener("mouseenter", () => cursor.classList.add("is-visible"));
+})();
