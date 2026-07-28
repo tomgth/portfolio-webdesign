@@ -37,3 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded",()=>document.querySelectorAll(
 '.hero-showcase [class*="arrow"],.hero-showcase [class*="scroll"],.hero .hero-arrow,.hero .scroll-down,.hero .scroll-indicator'
 ).forEach(e=>e.remove()));
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(
+    '.hero-showcase [class*="arrow"], .hero-showcase [class*="scroll"], .hero .hero-arrow, .hero .scroll-down, .hero .scroll-indicator'
+  ).forEach(el => el.remove());
+});
