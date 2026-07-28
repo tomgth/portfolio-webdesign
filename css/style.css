@@ -383,3 +383,144 @@ footer{border-top:1px solid var(--line);padding:42px 0 24px}
 @media(max-width:700px){
   .case-cover{width:calc(100% - 28px);margin-top:24px;border-radius:14px}
 }
+
+
+/* =========================================================
+   V8 HERO — visuel réellement intégré au fond de la page
+   ========================================================= */
+
+.hero{
+  position:relative;
+  min-height:720px;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.hero .container{
+  position:relative;
+  z-index:3;
+}
+
+.hero-grid{
+  display:block !important;
+  position:relative;
+}
+
+.hero-grid > .reveal:first-child{
+  width:min(48%, 690px);
+  position:relative;
+  z-index:4;
+}
+
+/* Le visuel n'est plus une "carte" : aucun cadre, aucune ombre rectangulaire. */
+.hero-showcase{
+  position:absolute !important;
+  z-index:1;
+  top:98px;
+  right:-2vw;
+  width:min(64vw, 1030px);
+  min-height:0 !important;
+  overflow:visible !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  pointer-events:none;
+}
+
+.hero-showcase::before,
+.hero-showcase::after{
+  display:none !important;
+  content:none !important;
+}
+
+.hero-showcase img{
+  display:block;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  border:0 !important;
+  outline:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  filter:none !important;
+}
+
+/* Fond lumineux local : il prolonge visuellement le violet de l'image dans la page. */
+.hero::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:62vw;
+  height:620px;
+  right:-8vw;
+  top:55px;
+  background:
+    radial-gradient(circle at 45% 35%, rgba(122,72,255,.18), transparent 38%),
+    radial-gradient(circle at 80% 48%, rgba(78,36,180,.11), transparent 46%);
+  filter:blur(18px);
+  pointer-events:none;
+}
+
+/* Désactive absolument toute flèche ajoutée au hero par les anciennes versions. */
+.hero .scroll-indicator,
+.hero .scroll-down,
+.hero .hero-arrow,
+.hero [class*="scroll-indicator"],
+.hero-showcase [class*="arrow"],
+.hero-showcase [class*="scroll"]{
+  display:none !important;
+}
+
+/* Les métriques restent au-dessus du visuel. */
+.hero .metrics{
+  position:relative;
+  z-index:5;
+}
+
+/* Desktop large : le visuel déborde légèrement vers la droite,
+   comme un objet posé dans la composition plutôt qu'une image encadrée. */
+@media(min-width:1250px){
+  .hero-showcase{
+    right:-4vw;
+    width:min(66vw, 1080px);
+  }
+}
+
+/* Tablettes : on repasse en composition verticale mais toujours sans cadre. */
+@media(max-width:1000px){
+  .hero{
+    min-height:auto;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:flex !important;
+    flex-direction:column;
+    gap:38px;
+  }
+  .hero-grid > .reveal:first-child{
+    width:100%;
+  }
+  .hero-showcase{
+    position:relative !important;
+    top:auto;
+    right:auto;
+    width:112%;
+    margin-left:-6%;
+    margin-top:8px;
+  }
+}
+
+/* Mobile : version plus légère et aucune impression de rectangle. */
+@media(max-width:700px){
+  .hero-showcase{
+    width:122%;
+    margin-left:-11%;
+  }
+  .hero-showcase img{
+    content:url("../images/hero-integrated-mobile.webp");
+  }
+}
