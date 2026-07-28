@@ -1,11 +1,15 @@
-# Portfolio Webdesign V8
+# Portfolio Webdesign V9
 
-Correction principale du hero :
-- plus aucun cadre autour du laptop / téléphone ;
-- le visuel est fondu sur les bords avec transparence ;
-- aucun texte parasite à gauche du visuel ;
-- suppression de la petite flèche flottante ;
-- laptop et smartphone restent les seuls éléments importants du visuel ;
-- positionnement absolu sur desktop pour donner l'impression qu'ils font partie du fond de la page.
+Corrections demandées sur le hero :
+- nouvelle image réellement utilisée dans le ZIP ;
+- uniquement le laptop + le téléphone dans la zone visuelle ;
+- plus de faux menu Accueil / Projets / À propos / Contact autour de l'image ;
+- plus de texte parasite coupé sur le côté ;
+- suppression de la flèche décorative ;
+- aucun cadre, aucune bordure et aucune ombre rectangulaire ;
+- bords transparents pour fondre le visuel dans le fond violet/noir du vrai site ;
+- halo violet réalisé en CSS derrière le visuel pour prolonger l'ambiance dans la page.
 
-Les versions CARD/FULL des projets de la V7 sont conservées.
+Les projets gardent deux usages distincts :
+- `*-card.webp` pour les cartes ;
+- `*-full.webp` pour les pages projet.
