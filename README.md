@@ -1,13 +1,9 @@
-# Portfolio Webdesign Premium V4
+# Portfolio Webdesign V6 — visuels validés
 
-Améliorations V4 :
-- visuels projets entièrement refaits en haute résolution, sans texte intégré ;
-- nouveau hero showcase plus propre ;
-- Web Lab déjà enrichi conservé ;
-- ajout d’une section Suggestions ;
-- projet Nova Studio conservé à la place de l’automobile.
+Cette version utilise uniquement les visuels photoréalistes extraits de la maquette validée :
+- ordinateur portable + smartphone dans le hero ;
+- restaurant Le Dragon réaliste ;
+- Nova Studio réaliste ;
+- architecture Forma Studio réaliste.
 
-À faire ensuite :
-- connecter le formulaire ;
-- configurer Cloudflare / HTTPS ;
-- remplacer les scores cibles par de vrais tests.
+Les anciennes images géométriques ont été supprimées du dossier images.
