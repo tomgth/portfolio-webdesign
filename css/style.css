@@ -778,3 +778,118 @@ footer{border-top:1px solid var(--line);padding:42px 0 24px}
   .hero-showcase img{content:url("../images/hero-devices-mobile.webp")}
   .hero-showcase,.hero-showcase.reveal{width:126% !important;margin-left:-13% !important}
 }
+
+
+/* ============================================================
+   V11 — FINAL HERO APPROVED
+   Laptop + phone only, native quality, no frame, no fake glow.
+   ============================================================ */
+.hero{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.hero::before,
+.hero::after{
+  content:none !important;
+  display:none !important;
+}
+
+.hero-grid{
+  position:relative !important;
+  display:block !important;
+  min-height:660px;
+}
+
+.hero-grid > .reveal:first-child{
+  position:relative;
+  z-index:5;
+  width:min(48%,680px);
+}
+
+.hero-showcase,
+.hero-showcase.reveal{
+  position:absolute !important;
+  z-index:2 !important;
+  top:72px !important;
+  right:-3vw !important;
+  width:min(65vw,1040px) !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  outline:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  pointer-events:none;
+}
+
+.hero-showcase::before,
+.hero-showcase::after{
+  content:none !important;
+  display:none !important;
+}
+
+.hero-showcase img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  border:0 !important;
+  outline:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  filter:none !important;
+  opacity:1 !important;
+}
+
+/* Kill every old decorative arrow / scroll indicator. */
+.hero-showcase [class*="arrow"],
+.hero-showcase [class*="scroll"],
+.hero .hero-arrow,
+.hero .scroll-down,
+.hero .scroll-indicator{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+}
+
+@media(max-width:1000px){
+  .hero-grid{
+    display:flex !important;
+    flex-direction:column;
+    min-height:0;
+  }
+
+  .hero-grid > .reveal:first-child{
+    width:100%;
+  }
+
+  .hero-showcase,
+  .hero-showcase.reveal{
+    position:relative !important;
+    top:auto !important;
+    right:auto !important;
+    width:112% !important;
+    margin:18px 0 0 -6% !important;
+  }
+}
+
+@media(max-width:700px){
+  .hero-showcase img{
+    content:url("../images/hero-devices-final-mobile.webp");
+  }
+
+  .hero-showcase,
+  .hero-showcase.reveal{
+    width:122% !important;
+    margin-left:-11% !important;
+  }
+}
