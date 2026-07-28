@@ -1,12 +1,13 @@
-# V10 — Hero Focus
+# Portfolio Webdesign V11
 
-Cette version se concentre uniquement sur le hero :
-- nouvelle image laptop + téléphone ;
-- aucun texte à gauche intégré dans l'image ;
-- aucun faux menu autour ;
-- aucune flèche décorative ;
-- aucun cadre autour du visuel ;
-- transparence légère uniquement sur les bords pour l'intégration au fond ;
-- toutes les anciennes images du dossier `images/` ont été supprimées.
+Hero final validé :
+- MacBook + smartphone photoréalistes ;
+- noir / anthracite dominant ;
+- touches violettes discrètes ;
+- aucune flèche ;
+- aucun faux menu ;
+- aucun cadre ;
+- aucun filtre ou halo artificiel ajouté en CSS ;
+- image desktop + version mobile dédiée.
 
-Les cartes projets restent présentes mais sans image dans cette version volontairement focalisée sur le hero.
+Remplace directement ton ancien projet GitHub par le contenu de ce ZIP.
