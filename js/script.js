@@ -122,3 +122,53 @@ const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches
     });
   });
 })();
+
+
+// V17 CLEAN — hero device entrance and illuminated custom cursor.
+(() => {
+  const body = document.body;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (body.classList.contains("home-page")) {
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      body.classList.remove("device-intro-loading");
+      body.classList.add("device-intro-complete");
+    }));
+  }
+
+  if (!reduced && window.matchMedia("(pointer:fine)").matches) {
+    const cursor = document.querySelector(".premium-cursor");
+    const dot = cursor?.querySelector(".cursor-dot");
+    const ring = cursor?.querySelector(".cursor-ring");
+    const glow = cursor?.querySelector(".cursor-glow");
+    if (!cursor || !dot || !ring || !glow) return;
+
+    let mx = innerWidth/2, my = innerHeight/2;
+    let rx = mx, ry = my, gx = mx, gy = my;
+
+    window.addEventListener("pointermove", e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + "px";
+      dot.style.top = my + "px";
+      document.documentElement.classList.remove("cursor-hidden");
+    }, {passive:true});
+
+    const loop = () => {
+      rx += (mx-rx)*.21; ry += (my-ry)*.21;
+      gx += (mx-gx)*.075; gy += (my-gy)*.075;
+      ring.style.left = rx+"px"; ring.style.top = ry+"px";
+      glow.style.left = gx+"px"; glow.style.top = gy+"px";
+      requestAnimationFrame(loop);
+    };
+    loop();
+
+    const interactive = "a,button,summary,.project-card,.service,.sector-card,.offer,.feature-chips span";
+    document.querySelectorAll(interactive).forEach(el => {
+      el.addEventListener("pointerenter", () => document.documentElement.classList.add("cursor-active"));
+      el.addEventListener("pointerleave", () => document.documentElement.classList.remove("cursor-active"));
+    });
+
+    document.documentElement.addEventListener("mouseleave", () => document.documentElement.classList.add("cursor-hidden"));
+    document.documentElement.addEventListener("mouseenter", () => document.documentElement.classList.remove("cursor-hidden"));
+  }
+})();
