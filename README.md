@@ -1,16 +1,11 @@
-# Portfolio Webdesign V7
+# Portfolio Webdesign V8
 
-Correction résolution :
+Correction principale du hero :
+- plus aucun cadre autour du laptop / téléphone ;
+- le visuel est fondu sur les bords avec transparence ;
+- aucun texte parasite à gauche du visuel ;
+- suppression de la petite flèche flottante ;
+- laptop et smartphone restent les seuls éléments importants du visuel ;
+- positionnement absolu sur desktop pour donner l'impression qu'ils font partie du fond de la page.
 
-- `le-dragon-card.webp` : miniature accueil / réalisations
-- `le-dragon-full.webp` : page projet
-- `nova-studio-card.webp` : miniature
-- `nova-studio-full.webp` : page projet
-- `forma-studio-card.webp` : miniature
-- `forma-studio-full.webp` : page projet
-- `hero-small.webp` et `hero-large.webp` : deux tailles du hero
-
-Important : les images FULL ne sont plus artificiellement agrandies par le script.
-La page projet limite aussi la largeur d'affichage pour éviter de transformer une image moyenne en image floue plein écran.
-
-Le cadre/ombre autour du hero a été retiré et la petite flèche du hero est masquée/supprimée.
+Les versions CARD/FULL des projets de la V7 sont conservées.
