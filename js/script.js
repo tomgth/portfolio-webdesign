@@ -33,13 +33,3 @@ document.addEventListener("DOMContentLoaded", () => {
     ".hero-showcase .scroll-indicator, .hero .hero-arrow, .hero .scroll-indicator, .hero .scroll-down"
   ).forEach(el => el.remove());
 });
-
-document.addEventListener("DOMContentLoaded",()=>document.querySelectorAll(
-'.hero-showcase [class*="arrow"],.hero-showcase [class*="scroll"],.hero .hero-arrow,.hero .scroll-down,.hero .scroll-indicator'
-).forEach(e=>e.remove()));
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(
-    '.hero-showcase [class*="arrow"], .hero-showcase [class*="scroll"], .hero .hero-arrow, .hero .scroll-down, .hero .scroll-indicator'
-  ).forEach(el => el.remove());
-});
