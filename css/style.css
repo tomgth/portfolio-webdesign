@@ -780,3 +780,225 @@ footer{border-top:1px solid var(--line);padding:42px 0 24px}
 @media(prefers-reduced-motion:reduce){.cinematic-intro{display:none!important}.home-page.intro-lock{overflow:auto}.hero-stagger,.hero-device-enter{opacity:1!important;animation:none!important}.ambient-ring,.ambient-dot,.hero-scroll-cue i,.device-orbit-glow,.mini-laptop,.mini-phone,.manifesto-sphere,.manifesto-sphere:before,.cta:before{animation:none!important}}
 
 body{transition:opacity .22s ease,filter .22s ease}.page-leaving{opacity:.15;filter:blur(5px)}
+
+
+/* ==========================================================
+   V17 CLEAN — animated hero devices + premium cursor
+   ========================================================== */
+.cinematic-intro{display:none!important}
+.home-page.device-intro-loading{overflow-x:hidden}
+
+/* Hero text is visible immediately; only the devices perform the intro. */
+.hero-stagger,.hero-device-enter{opacity:1!important;animation:none!important}
+.hero-line.accent:after{transition:transform .8s .9s}
+.device-intro-complete .hero-line.accent:after{transform:scaleX(1)}
+
+.device-hero-stage{
+  position:relative!important;
+  min-height:520px;
+  perspective:1200px;
+  transform-style:preserve-3d;
+  isolation:isolate;
+}
+.device-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  will-change:transform,opacity,filter;
+  transform-style:preserve-3d;
+}
+.device-layer img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+/* Split the already-approved hero picture into a laptop zone and a phone zone. */
+.laptop-layer{
+  clip-path:polygon(0 0,80% 0,80% 100%,0 100%);
+  transform-origin:40% 78%;
+  opacity:0;
+  transform:translate3d(0,70px,0) rotateX(72deg) rotateZ(-1deg) scale(.94);
+  filter:brightness(.58) saturate(.8) blur(4px);
+}
+.phone-layer{
+  clip-path:polygon(66% 0,100% 0,100% 100%,66% 100%);
+  transform-origin:82% 62%;
+  opacity:0;
+  transform:translate3d(85px,16px,0) rotateY(-28deg) scale(.86);
+  filter:brightness(.42) saturate(.75) blur(5px);
+}
+.device-intro-complete .laptop-layer{
+  animation:laptopOpenClean 1.55s .08s cubic-bezier(.16,1,.3,1) forwards;
+}
+.device-intro-complete .phone-layer{
+  animation:phoneWakeClean 1.05s .76s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.device-intro-glow{
+  position:absolute;
+  z-index:-1;
+  right:0;
+  top:20%;
+  width:76%;
+  height:62%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(124,58,237,.25),rgba(76,29,149,.08) 42%,transparent 70%);
+  filter:blur(48px);
+  opacity:0;
+  transform:scale(.7);
+}
+.device-intro-complete .device-intro-glow{
+  animation:deviceGlowOn .9s .75s ease-out forwards,deviceGlowIdle 5.5s 2s ease-in-out infinite;
+}
+
+/* Approximate screen reflections to create the "power on" feeling. */
+.laptop-screen-light{
+  position:absolute;
+  left:13%;
+  top:14%;
+  width:54%;
+  height:51%;
+  border-radius:12px;
+  opacity:0;
+  background:
+    linear-gradient(105deg,transparent 25%,rgba(255,255,255,.12) 48%,transparent 66%),
+    radial-gradient(circle at 60% 45%,rgba(167,139,250,.22),transparent 52%);
+  mix-blend-mode:screen;
+  box-shadow:inset 0 0 32px rgba(167,139,250,.09),0 0 28px rgba(124,58,237,.1);
+}
+.phone-screen-light{
+  position:absolute;
+  right:9%;
+  top:18%;
+  width:16.5%;
+  height:47%;
+  border-radius:24px;
+  opacity:0;
+  background:
+    linear-gradient(115deg,transparent 24%,rgba(255,255,255,.16) 50%,transparent 68%),
+    radial-gradient(circle at 50% 42%,rgba(167,139,250,.27),transparent 58%);
+  mix-blend-mode:screen;
+  box-shadow:0 0 28px rgba(124,58,237,.15);
+}
+.device-intro-complete .laptop-screen-light{
+  animation:screenPowerOn .82s 1.06s ease-out forwards,screenBreath 5.5s 2.25s ease-in-out infinite;
+}
+.device-intro-complete .phone-screen-light{
+  animation:screenPowerOn .68s 1.50s ease-out forwards,screenBreath 4.8s 2.35s ease-in-out infinite;
+}
+.device-intro-complete .device-hero-stage{
+  animation:heroDevicesIdle 7s 2.15s ease-in-out infinite;
+}
+
+@keyframes laptopOpenClean{
+  0%{opacity:0;transform:translate3d(0,70px,0) rotateX(72deg) rotateZ(-1deg) scale(.94);filter:brightness(.58) saturate(.8) blur(4px)}
+  30%{opacity:1}
+  68%{transform:translate3d(0,-7px,0) rotateX(-3deg) rotateZ(0) scale(1.012);filter:brightness(.92) saturate(.98) blur(0)}
+  100%{opacity:1;transform:none;filter:none}
+}
+@keyframes phoneWakeClean{
+  0%{opacity:0;transform:translate3d(85px,16px,0) rotateY(-28deg) scale(.86);filter:brightness(.42) saturate(.75) blur(5px)}
+  45%{opacity:1}
+  76%{transform:translate3d(-5px,-4px,0) rotateY(4deg) scale(1.02);filter:brightness(.86) saturate(.95) blur(0)}
+  100%{opacity:1;transform:none;filter:none}
+}
+@keyframes screenPowerOn{
+  0%{opacity:0;filter:brightness(.15)}
+  22%{opacity:.95;filter:brightness(2)}
+  39%{opacity:.22;filter:brightness(.55)}
+  56%{opacity:.76;filter:brightness(1.35)}
+  72%{opacity:.37;filter:brightness(.9)}
+  100%{opacity:.48;filter:brightness(1)}
+}
+@keyframes screenBreath{0%,100%{opacity:.34}50%{opacity:.55}}
+@keyframes deviceGlowOn{to{opacity:.92;transform:scale(1)}}
+@keyframes deviceGlowIdle{0%,100%{opacity:.68;transform:scale(1)}50%{opacity:.95;transform:scale(1.055)}}
+@keyframes heroDevicesIdle{0%,100%{translate:0 0}50%{translate:0 -7px}}
+
+/* Premium cursor + modern violet light halo. */
+.premium-cursor{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:30000;
+  pointer-events:none;
+  transition:opacity .18s ease;
+}
+.cursor-dot,.cursor-ring,.cursor-glow{
+  position:fixed;
+  left:0;
+  top:0;
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+}
+.cursor-dot{
+  width:5px;
+  height:5px;
+  background:#fff;
+  box-shadow:0 0 10px rgba(255,255,255,.9),0 0 22px rgba(139,92,246,.85);
+  z-index:3;
+}
+.cursor-ring{
+  width:30px;
+  height:30px;
+  border:1px solid rgba(196,181,253,.5);
+  background:rgba(139,92,246,.018);
+  box-shadow:0 0 20px rgba(124,58,237,.13),inset 0 0 12px rgba(167,139,250,.05);
+  z-index:2;
+  transition:width .2s ease,height .2s ease,border-color .2s ease,background .2s ease,opacity .2s ease;
+}
+.cursor-glow{
+  width:155px;
+  height:155px;
+  background:radial-gradient(circle,rgba(139,92,246,.14),rgba(109,40,217,.05) 35%,transparent 70%);
+  filter:blur(8px);
+  opacity:.76;
+  z-index:1;
+  transition:width .3s ease,height .3s ease,opacity .3s ease;
+}
+.cursor-active .cursor-ring{
+  width:48px;
+  height:48px;
+  border-color:rgba(216,205,255,.8);
+  background:rgba(139,92,246,.07);
+}
+.cursor-active .cursor-glow{
+  width:190px;
+  height:190px;
+  opacity:.95;
+}
+.cursor-active .cursor-dot{transform:translate(-50%,-50%) scale(1.4)}
+.cursor-hidden .premium-cursor{opacity:0}
+
+/* Tiny reaction around interactive elements. */
+.project-card,.service,.sector-card,.offer,.btn,.nav-cta,.feature-chips span{
+  position:relative;
+}
+.project-card:hover,.service:hover,.sector-card:hover,.offer:hover{
+  box-shadow:0 28px 80px rgba(0,0,0,.26),0 0 0 1px rgba(139,92,246,.03);
+}
+
+@media(pointer:fine){
+  .premium-cursor{display:block}
+  body,a,button,summary,.project-card,.service,.sector-card,.offer,.feature-chips span{cursor:none!important}
+}
+@media(max-width:900px){
+  .device-hero-stage{min-height:430px}
+}
+@media(max-width:700px){
+  .device-hero-stage{min-height:330px}
+  .laptop-screen-light{left:12%;top:16%;width:55%;height:48%}
+  .phone-screen-light{right:7%;top:20%;width:17%;height:44%}
+}
+@media(pointer:coarse){
+  .premium-cursor{display:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .laptop-layer,.phone-layer{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}
+  .device-intro-glow{opacity:.55!important;transform:none!important;animation:none!important}
+  .laptop-screen-light,.phone-screen-light{opacity:.2!important;animation:none!important}
+  .device-hero-stage{animation:none!important}
+}
