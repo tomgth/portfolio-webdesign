@@ -664,10 +664,6 @@ footer{border-top:1px solid var(--line);padding:42px 0 24px}
 }
 
 @media (max-width: 700px) {
-  .hero-showcase img {
-    content: url("../images/hero-devices-v9-mobile.webp");
-  }
-
   .hero-showcase,
   .hero-showcase.reveal {
     width: 128% !important;
