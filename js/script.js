@@ -296,3 +296,22 @@ const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches
     });
   });
 })();
+
+
+// V23 — homepage accent is intentionally fixed to violet.
+(() => {
+  if (!document.body.classList.contains("home-page")) return;
+  const root = document.documentElement;
+  const lockViolet = () => {
+    root.style.setProperty("--accent","#8b5cf6");
+    root.style.setProperty("--accent-2","#c4b5fd");
+    root.style.setProperty("--accent-rgb","139,92,246");
+    root.style.setProperty("--accent-deep","#5b21b6");
+    document.body.dataset.currentAccent = "violet";
+  };
+  lockViolet();
+
+  // V20 observers can fire later; enforce the homepage identity.
+  const observer = new MutationObserver(lockViolet);
+  observer.observe(document.documentElement,{attributes:true,attributeFilter:["style"]});
+})();
