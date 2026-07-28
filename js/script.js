@@ -124,51 +124,53 @@ const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches
 })();
 
 
-// V17 CLEAN — hero device entrance and illuminated custom cursor.
+// V18 FINAL — cursor automatically injected on every page.
 (() => {
-  const body = document.body;
+  const fine = window.matchMedia("(pointer:fine)").matches;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!fine || reduced) return;
 
-  if (body.classList.contains("home-page")) {
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      body.classList.remove("device-intro-loading");
-      body.classList.add("device-intro-complete");
-    }));
-  }
+  // Remove old cursor markup from previous versions if present.
+  document.querySelectorAll(".premium-cursor,.site-cursor-v18").forEach(el => el.remove());
+  document.documentElement.classList.remove("cursor-active","cursor-hidden");
 
-  if (!reduced && window.matchMedia("(pointer:fine)").matches) {
-    const cursor = document.querySelector(".premium-cursor");
-    const dot = cursor?.querySelector(".cursor-dot");
-    const ring = cursor?.querySelector(".cursor-ring");
-    const glow = cursor?.querySelector(".cursor-glow");
-    if (!cursor || !dot || !ring || !glow) return;
+  const cursor = document.createElement("div");
+  cursor.className = "site-cursor-v18";
+  cursor.setAttribute("aria-hidden","true");
+  cursor.innerHTML = '<span class="cursor-halo-v18"></span><span class="cursor-trail-v18"></span><span class="cursor-core-v18"></span>';
+  document.body.appendChild(cursor);
 
-    let mx = innerWidth/2, my = innerHeight/2;
-    let rx = mx, ry = my, gx = mx, gy = my;
+  const core = cursor.querySelector(".cursor-core-v18");
+  const trail = cursor.querySelector(".cursor-trail-v18");
+  const halo = cursor.querySelector(".cursor-halo-v18");
 
-    window.addEventListener("pointermove", e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + "px";
-      dot.style.top = my + "px";
-      document.documentElement.classList.remove("cursor-hidden");
-    }, {passive:true});
+  let mx=innerWidth/2,my=innerHeight/2,tx=mx,ty=my,hx=mx,hy=my,oldX=mx,oldY=my;
+  const pos=(el,x,y)=>{el.style.left=x+"px";el.style.top=y+"px"};
 
-    const loop = () => {
-      rx += (mx-rx)*.21; ry += (my-ry)*.21;
-      gx += (mx-gx)*.075; gy += (my-gy)*.075;
-      ring.style.left = rx+"px"; ring.style.top = ry+"px";
-      glow.style.left = gx+"px"; glow.style.top = gy+"px";
-      requestAnimationFrame(loop);
-    };
-    loop();
+  addEventListener("pointermove",e=>{
+    oldX=mx;oldY=my;mx=e.clientX;my=e.clientY;
+    pos(core,mx,my);
+    const angle=Math.atan2(my-oldY,mx-oldX)*180/Math.PI;
+    trail.style.transform=`translate(-100%,-50%) rotate(${angle}deg)`;
+    cursor.classList.add("is-visible");
+  },{passive:true});
 
-    const interactive = "a,button,summary,.project-card,.service,.sector-card,.offer,.feature-chips span";
-    document.querySelectorAll(interactive).forEach(el => {
-      el.addEventListener("pointerenter", () => document.documentElement.classList.add("cursor-active"));
-      el.addEventListener("pointerleave", () => document.documentElement.classList.remove("cursor-active"));
-    });
+  const loop=()=>{
+    tx+=(mx-tx)*.24;ty+=(my-ty)*.24;
+    hx+=(mx-hx)*.075;hy+=(my-hy)*.075;
+    pos(trail,tx,ty);pos(halo,hx,hy);
+    requestAnimationFrame(loop);
+  };
+  loop();
 
-    document.documentElement.addEventListener("mouseleave", () => document.documentElement.classList.add("cursor-hidden"));
-    document.documentElement.addEventListener("mouseenter", () => document.documentElement.classList.remove("cursor-hidden"));
-  }
+  const selector="a,button,summary,.project-card,.service,.sector-card,.offer,.feature-chips span,.faq-list details";
+  document.addEventListener("pointerover",e=>{
+    if(e.target.closest(selector)) cursor.classList.add("cursor-hover-v18");
+  },{passive:true});
+  document.addEventListener("pointerout",e=>{
+    if(e.target.closest(selector) && !e.relatedTarget?.closest?.(selector)) cursor.classList.remove("cursor-hover-v18");
+  },{passive:true});
+
+  document.documentElement.addEventListener("mouseleave",()=>cursor.classList.remove("is-visible"));
+  document.documentElement.addEventListener("mouseenter",()=>cursor.classList.add("is-visible"));
 })();
