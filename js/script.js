@@ -25,3 +25,11 @@ document.querySelector("#contact-form")?.addEventListener("submit",e=>{
   const s=document.querySelector("#status");
   if(s)s.textContent="Formulaire de démonstration : aucune donnée n’est encore envoyée.";
 });
+
+// V9: remove legacy decorative hero arrows/scroll indicators if older markup creates them.
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(
+    ".hero-showcase .arrow, .hero-showcase .scroll, .hero-showcase .scroll-down, " +
+    ".hero-showcase .scroll-indicator, .hero .hero-arrow, .hero .scroll-indicator, .hero .scroll-down"
+  ).forEach(el => el.remove());
+});
