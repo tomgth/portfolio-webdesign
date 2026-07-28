@@ -1370,3 +1370,105 @@ section[data-accent="green"]::before{
   .hero-realistic-devices{opacity:1!important;transform:none!important;animation:none!important}
   .hero-realistic-glow{opacity:.55!important;animation:none!important}
 }
+
+
+/* ==========================================================
+   V23 — fixed violet homepage + restrained professional hero
+   ========================================================== */
+
+/* Homepage never changes accent while scrolling. */
+body.home-page{
+  --accent:#8b5cf6!important;
+  --accent-2:#c4b5fd!important;
+  --accent-rgb:139,92,246!important;
+  --accent-deep:#5b21b6!important;
+}
+body.home-page section[data-accent]::before{
+  background:radial-gradient(760px circle at 84% 36%,rgba(139,92,246,.075),transparent 66%)!important;
+}
+
+/* More restrained integration: image itself carries the devices. */
+.hero-realistic-stage{
+  top:42px!important;
+  right:-2vw!important;
+  width:min(66vw,1060px)!important;
+  height:620px!important;
+  overflow:hidden!important;
+  border-radius:34px!important;
+  opacity:1!important;
+  transform:none!important;
+}
+.hero-realistic-devices{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:64% center!important;
+  filter:none!important;
+  opacity:0;
+  transform-origin:56% 70%;
+  clip-path:inset(0 100% 0 0 round 28px);
+  animation:
+    v23HeroReveal 1.55s .12s cubic-bezier(.16,1,.3,1) forwards,
+    v23HeroFloat 8s 2s ease-in-out infinite!important;
+}
+.hero-realistic-glow{
+  width:64%!important;
+  height:52%!important;
+  right:4%!important;
+  top:24%!important;
+  filter:blur(62px)!important;
+  opacity:0;
+  animation:v23GlowIn 1.2s .55s ease-out forwards,v23GlowIdle 7s 2s ease-in-out infinite!important;
+}
+@keyframes v23HeroReveal{
+  0%{
+    opacity:0;
+    clip-path:inset(0 100% 0 0 round 28px);
+    transform:translate3d(50px,20px,0) scale(.975);
+    filter:blur(5px) brightness(.62);
+  }
+  40%{
+    opacity:1;
+    filter:blur(0) brightness(.82);
+  }
+  72%{
+    clip-path:inset(0 0 0 0 round 28px);
+    transform:translate3d(-3px,-2px,0) scale(1.008);
+    filter:brightness(.98);
+  }
+  100%{
+    opacity:1;
+    clip-path:inset(0 0 0 0 round 28px);
+    transform:none;
+    filter:none;
+  }
+}
+@keyframes v23HeroFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -5px}
+}
+@keyframes v23GlowIn{
+  from{opacity:0;transform:scale(.78)}
+  to{opacity:.58;transform:scale(1)}
+}
+@keyframes v23GlowIdle{
+  0%,100%{opacity:.42;transform:scale(1)}
+  50%{opacity:.62;transform:scale(1.045)}
+}
+
+@media(max-width:1000px){
+  .hero-realistic-stage{
+    width:112%!important;
+    height:500px!important;
+    margin-left:-6%!important;
+    border-radius:28px!important;
+  }
+}
+@media(max-width:700px){
+  .hero-realistic-stage{
+    width:120%!important;
+    height:370px!important;
+    margin-left:-10%!important;
+    border-radius:22px!important;
+  }
+}
