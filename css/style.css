@@ -1260,3 +1260,113 @@ section[data-accent="warm"]::before{
 section[data-accent="green"]::before{
   background:radial-gradient(760px circle at 82% 38%,rgba(16,185,129,.10),transparent 65%);
 }
+
+
+/* ==========================================================
+   V22 — photorealistic hero devices, no artificial cuts
+   ========================================================== */
+.hero-device-animation,
+.hero-laptop-real,
+.hero-phone-real,
+.hero-laptop-flash,
+.hero-phone-flash,
+.hero-device-aura,
+.device-layer,
+.device-intro-glow,
+.laptop-screen-light,
+.phone-screen-light{
+  display:none!important;
+}
+
+.hero-realistic-stage{
+  position:absolute!important;
+  z-index:2!important;
+  top:28px!important;
+  right:-3.5vw!important;
+  width:min(67vw,1080px)!important;
+  height:640px!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+  pointer-events:none;
+  isolation:isolate;
+  perspective:1200px;
+}
+.hero-realistic-stage::before,
+.hero-realistic-stage::after{display:none!important;content:none!important}
+
+.hero-realistic-devices{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  filter:drop-shadow(0 34px 46px rgba(0,0,0,.34)) saturate(1.02)!important;
+  opacity:0;
+  transform-origin:52% 70%;
+  animation:
+    heroRealIn 1.35s .12s cubic-bezier(.16,1,.3,1) forwards,
+    heroRealFloat 7s 1.7s ease-in-out infinite;
+  z-index:2;
+}
+.hero-realistic-glow{
+  position:absolute;
+  z-index:0;
+  width:72%;
+  height:58%;
+  right:5%;
+  top:22%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(var(--accent-rgb),.26),rgba(var(--accent-rgb),.07) 44%,transparent 72%);
+  filter:blur(48px);
+  opacity:0;
+  animation:heroRealGlow 1s .55s ease-out forwards,heroRealGlowIdle 5.6s 1.7s ease-in-out infinite;
+}
+@keyframes heroRealIn{
+  0%{opacity:0;transform:translate3d(70px,30px,0) rotateY(-8deg) rotateX(2deg) scale(.94);filter:blur(6px) brightness(.65)}
+  55%{opacity:1;filter:blur(0) brightness(.92)}
+  78%{transform:translate3d(-4px,-3px,0) rotateY(1.5deg) rotateX(0) scale(1.012)}
+  100%{opacity:1;transform:none;filter:none}
+}
+@keyframes heroRealFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -8px}
+}
+@keyframes heroRealGlow{
+  from{opacity:0;transform:scale(.72)}
+  to{opacity:.9;transform:scale(1)}
+}
+@keyframes heroRealGlowIdle{
+  0%,100%{opacity:.64;transform:scale(1)}
+  50%{opacity:.9;transform:scale(1.06)}
+}
+
+@media(max-width:1000px){
+  .hero-realistic-stage{
+    position:relative!important;
+    top:auto!important;
+    right:auto!important;
+    width:116%!important;
+    height:520px!important;
+    margin:20px 0 0 -8%!important;
+  }
+}
+@media(max-width:700px){
+  .hero-realistic-stage{
+    width:128%!important;
+    height:390px!important;
+    margin-left:-14%!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-realistic-devices{opacity:1!important;transform:none!important;animation:none!important}
+  .hero-realistic-glow{opacity:.55!important;animation:none!important}
+}
