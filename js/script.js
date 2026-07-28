@@ -210,3 +210,89 @@ const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches
   document.documentElement.addEventListener("mouseleave", () => cursor.classList.remove("is-visible"));
   document.documentElement.addEventListener("mouseenter", () => cursor.classList.add("is-visible"));
 })();
+
+
+// V20 — page and scroll-driven color identity.
+(() => {
+  const root = document.documentElement;
+  const body = document.body;
+
+  const themes = {
+    violet:{accent:"#8b5cf6",accent2:"#c4b5fd",rgb:"139,92,246",deep:"#5b21b6"},
+    blue:{accent:"#3b82f6",accent2:"#93c5fd",rgb:"59,130,246",deep:"#1d4ed8"},
+    cyan:{accent:"#06b6d4",accent2:"#67e8f9",rgb:"6,182,212",deep:"#0e7490"},
+    green:{accent:"#10b981",accent2:"#6ee7b7",rgb:"16,185,129",deep:"#047857"},
+    warm:{accent:"#ef5b3c",accent2:"#f6ad7b",rgb:"239,91,60",deep:"#b83224"},
+    amber:{accent:"#d6a15b",accent2:"#f5d7a1",rgb:"214,161,91",deep:"#9a6b2f"}
+  };
+
+  const applyTheme = (name) => {
+    const t = themes[name] || themes.violet;
+    root.style.setProperty("--accent",t.accent);
+    root.style.setProperty("--accent-2",t.accent2);
+    root.style.setProperty("--accent-rgb",t.rgb);
+    root.style.setProperty("--accent-deep",t.deep);
+    body.dataset.currentAccent = name;
+  };
+
+  // Subtle global ambient layer, shared across every page.
+  if (!document.querySelector(".color-ambient-v20")) {
+    const ambient = document.createElement("div");
+    ambient.className = "color-ambient-v20";
+    ambient.setAttribute("aria-hidden","true");
+    body.prepend(ambient);
+  }
+
+  const path = location.pathname.toLowerCase();
+
+  // Fixed identity by page.
+  let pageTheme = "violet";
+  if (path.includes("/projets/restaurant")) pageTheme = "warm";
+  else if (path.includes("/projets/studio-digital")) pageTheme = "violet";
+  else if (path.includes("/projets/architecture")) pageTheme = "amber";
+  else if (path.endsWith("/services.html") || path.endsWith("services.html")) pageTheme = "blue";
+  else if (path.endsWith("/projets.html") || path.endsWith("projets.html")) pageTheme = "warm";
+  else if (path.endsWith("/tarifs.html") || path.endsWith("tarifs.html")) pageTheme = "green";
+  else if (path.endsWith("/a-propos.html") || path.endsWith("a-propos.html")) pageTheme = "cyan";
+  else if (path.endsWith("/lab.html") || path.endsWith("lab.html")) pageTheme = "blue";
+  else if (path.endsWith("/contact.html") || path.endsWith("contact.html")) pageTheme = "violet";
+
+  applyTheme(pageTheme);
+
+  // Home page: accent evolves as sections enter the center of the viewport.
+  const accentSections = [...document.querySelectorAll("[data-accent]")];
+  if (accentSections.length) {
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+      if (visible.length) {
+        applyTheme(visible[0].target.dataset.accent || "violet");
+      }
+    },{
+      root:null,
+      rootMargin:"-28% 0px -38% 0px",
+      threshold:[0,.2,.4,.6,.8,1]
+    });
+    accentSections.forEach(section => observer.observe(section));
+  }
+
+  // Project cards can temporarily preview their own color identity on hover.
+  const projectThemeMap = [
+    ['a[href*="restaurant"]',"warm"],
+    ['a[href*="studio-digital"]',"violet"],
+    ['a[href*="architecture"]',"amber"]
+  ];
+  projectThemeMap.forEach(([selector,theme]) => {
+    document.querySelectorAll(selector).forEach(card => {
+      let previous = null;
+      card.addEventListener("pointerenter",() => {
+        previous = body.dataset.currentAccent || pageTheme;
+        applyTheme(theme);
+      });
+      card.addEventListener("pointerleave",() => {
+        applyTheme(previous || pageTheme);
+      });
+    });
+  });
+})();
