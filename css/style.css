@@ -191,6 +191,14 @@ h3{font-size:1.32rem}
 .orb{width:90px;height:90px;border-radius:50%;margin:28px auto;background:linear-gradient(145deg,#7c3aed,#22d3ee);animation:orb 3s ease-in-out infinite}
 @keyframes orb{50%{transform:translateY(-15px) rotate(12deg) scale(1.08)}}
 
+/* CASE STUDY — fiche technique du projet */
+.specs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.spec-item{background:#0b0d16;padding:24px 22px}
+.spec-item .spec-label{color:#a978ff;font-size:.62rem;font-weight:900;letter-spacing:.14em;display:block;margin-bottom:11px}
+.spec-item p{color:#dcdee6;font-size:.82rem;line-height:1.55}
+@media(max-width:1000px){.specs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.specs-grid{grid-template-columns:1fr}}
+
 /* FOOTER */
 footer{border-top:1px solid var(--line);padding:42px 0 24px}
 .footer-row{display:flex;align-items:center;justify-content:space-between;gap:30px}
@@ -514,18 +522,6 @@ footer{border-top:1px solid var(--line);padding:42px 0 24px}
   }
 }
 
-/* Mobile : version plus légère et aucune impression de rectangle. */
-@media(max-width:700px){
-  .hero-showcase{
-    width:122%;
-    margin-left:-11%;
-  }
-  .hero-showcase img{
-    content:url("../images/hero-integrated-mobile.webp");
-  }
-}
-
-
 /* ============================================================
    V9 — HERO FINAL
    Objectif : uniquement laptop + téléphone intégrés au fond.
@@ -680,216 +676,5 @@ footer{border-top:1px solid var(--line);padding:42px 0 24px}
 
   .case-cover {
     width: calc(100% - 28px) !important;
-  }
-}
-
-
-/* V10 — HERO FOCUS: only laptop + phone, naturally integrated */
-.hero{
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-}
-.hero-grid{
-  position:relative !important;
-  display:block !important;
-  min-height:660px;
-}
-.hero-grid > .reveal:first-child{
-  position:relative;
-  z-index:4;
-  width:min(49%,690px);
-}
-.hero-showcase,
-.hero-showcase.reveal{
-  position:absolute !important;
-  z-index:2 !important;
-  top:40px !important;
-  right:-4vw !important;
-  width:min(67vw,1080px) !important;
-  margin:0 !important;
-  padding:0 !important;
-  border:0 !important;
-  outline:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  overflow:visible !important;
-  pointer-events:none;
-}
-.hero-showcase::before,
-.hero-showcase::after{
-  content:none !important;
-  display:none !important;
-}
-.hero-showcase img{
-  display:block !important;
-  width:100% !important;
-  height:auto !important;
-  max-height:none !important;
-  object-fit:contain !important;
-  border:0 !important;
-  outline:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  filter:none !important;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  z-index:0;
-  right:-14vw;
-  top:20px;
-  width:68vw;
-  height:620px;
-  background:
-    radial-gradient(circle at 58% 50%,rgba(119,62,255,.12),transparent 43%);
-  pointer-events:none;
-}
-.hero-showcase [class*="arrow"],
-.hero-showcase [class*="scroll"],
-.hero .hero-arrow,
-.hero .scroll-down,
-.hero .scroll-indicator{
-  display:none !important;
-}
-
-/* No other image assets in this focused build. */
-.project-card{
-  background:
-    radial-gradient(circle at 75% 20%,rgba(139,92,246,.10),transparent 34%),
-    linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));
-}
-.project-card::after{
-  background:linear-gradient(180deg,transparent,rgba(3,4,10,.75)) !important;
-}
-
-@media(max-width:1000px){
-  .hero-grid{display:flex !important;flex-direction:column;min-height:0}
-  .hero-grid > .reveal:first-child{width:100%}
-  .hero-showcase,.hero-showcase.reveal{
-    position:relative !important;
-    top:auto !important;right:auto !important;
-    width:116% !important;margin:12px 0 0 -8% !important;
-  }
-}
-@media(max-width:700px){
-  .hero-showcase img{content:url("../images/hero-devices-mobile.webp")}
-  .hero-showcase,.hero-showcase.reveal{width:126% !important;margin-left:-13% !important}
-}
-
-
-/* ============================================================
-   V11 — FINAL HERO APPROVED
-   Laptop + phone only, native quality, no frame, no fake glow.
-   ============================================================ */
-.hero{
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-}
-
-.hero::before,
-.hero::after{
-  content:none !important;
-  display:none !important;
-}
-
-.hero-grid{
-  position:relative !important;
-  display:block !important;
-  min-height:660px;
-}
-
-.hero-grid > .reveal:first-child{
-  position:relative;
-  z-index:5;
-  width:min(48%,680px);
-}
-
-.hero-showcase,
-.hero-showcase.reveal{
-  position:absolute !important;
-  z-index:2 !important;
-  top:72px !important;
-  right:-3vw !important;
-  width:min(65vw,1040px) !important;
-  margin:0 !important;
-  padding:0 !important;
-  border:0 !important;
-  outline:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  overflow:visible !important;
-  pointer-events:none;
-}
-
-.hero-showcase::before,
-.hero-showcase::after{
-  content:none !important;
-  display:none !important;
-}
-
-.hero-showcase img{
-  display:block !important;
-  width:100% !important;
-  height:auto !important;
-  max-height:none !important;
-  margin:0 !important;
-  padding:0 !important;
-  object-fit:contain !important;
-  object-position:center !important;
-  border:0 !important;
-  outline:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  filter:none !important;
-  opacity:1 !important;
-}
-
-/* Kill every old decorative arrow / scroll indicator. */
-.hero-showcase [class*="arrow"],
-.hero-showcase [class*="scroll"],
-.hero .hero-arrow,
-.hero .scroll-down,
-.hero .scroll-indicator{
-  display:none !important;
-  visibility:hidden !important;
-  opacity:0 !important;
-}
-
-@media(max-width:1000px){
-  .hero-grid{
-    display:flex !important;
-    flex-direction:column;
-    min-height:0;
-  }
-
-  .hero-grid > .reveal:first-child{
-    width:100%;
-  }
-
-  .hero-showcase,
-  .hero-showcase.reveal{
-    position:relative !important;
-    top:auto !important;
-    right:auto !important;
-    width:112% !important;
-    margin:18px 0 0 -6% !important;
-  }
-}
-
-@media(max-width:700px){
-  .hero-showcase img{
-    content:url("../images/hero-devices-final-mobile.webp");
-  }
-
-  .hero-showcase,
-  .hero-showcase.reveal{
-    width:122% !important;
-    margin-left:-11% !important;
   }
 }
