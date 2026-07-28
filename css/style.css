@@ -682,3 +682,99 @@ footer{border-top:1px solid var(--line);padding:42px 0 24px}
     width: calc(100% - 28px) !important;
   }
 }
+
+
+/* V10 — HERO FOCUS: only laptop + phone, naturally integrated */
+.hero{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-grid{
+  position:relative !important;
+  display:block !important;
+  min-height:660px;
+}
+.hero-grid > .reveal:first-child{
+  position:relative;
+  z-index:4;
+  width:min(49%,690px);
+}
+.hero-showcase,
+.hero-showcase.reveal{
+  position:absolute !important;
+  z-index:2 !important;
+  top:40px !important;
+  right:-4vw !important;
+  width:min(67vw,1080px) !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  outline:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  pointer-events:none;
+}
+.hero-showcase::before,
+.hero-showcase::after{
+  content:none !important;
+  display:none !important;
+}
+.hero-showcase img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  border:0 !important;
+  outline:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  filter:none !important;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  right:-14vw;
+  top:20px;
+  width:68vw;
+  height:620px;
+  background:
+    radial-gradient(circle at 58% 50%,rgba(119,62,255,.12),transparent 43%);
+  pointer-events:none;
+}
+.hero-showcase [class*="arrow"],
+.hero-showcase [class*="scroll"],
+.hero .hero-arrow,
+.hero .scroll-down,
+.hero .scroll-indicator{
+  display:none !important;
+}
+
+/* No other image assets in this focused build. */
+.project-card{
+  background:
+    radial-gradient(circle at 75% 20%,rgba(139,92,246,.10),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));
+}
+.project-card::after{
+  background:linear-gradient(180deg,transparent,rgba(3,4,10,.75)) !important;
+}
+
+@media(max-width:1000px){
+  .hero-grid{display:flex !important;flex-direction:column;min-height:0}
+  .hero-grid > .reveal:first-child{width:100%}
+  .hero-showcase,.hero-showcase.reveal{
+    position:relative !important;
+    top:auto !important;right:auto !important;
+    width:116% !important;margin:12px 0 0 -8% !important;
+  }
+}
+@media(max-width:700px){
+  .hero-showcase img{content:url("../images/hero-devices-mobile.webp")}
+  .hero-showcase,.hero-showcase.reveal{width:126% !important;margin-left:-13% !important}
+}
