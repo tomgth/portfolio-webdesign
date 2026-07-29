@@ -1,6 +1,7 @@
 <!doctype html><html lang="fr"><head>
-<script>document.documentElement.classList.add('js');</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow,max-image-preview:large"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="description" content="Webdesigner freelance : création de sites web modernes, rapides et sur mesure pour petites entreprises, commerces, restaurants et indépendants."><meta name="theme-color" content="#050610">
 <title>Tom Webdesign — Création de sites web premium</title>
 <link rel="stylesheet" href="css/style.css">
@@ -8,14 +9,12 @@
 </head><body class="home-page">
 <header class="header"><div class="container navbar">
 <a class="logo" href="index.html"><span class="brand-symbol">T</span><span class="brand-word">TOM<span>.</span><small>WEB DESIGN</small></span></a>
-<nav class="desktop-nav"><a class="active" href="index.html">Accueil</a><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="lab.html">Lab</a></nav>
+<nav class="desktop-nav"><a class="active" aria-current="page" href="index.html">Accueil</a><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="lab.html">Lab</a></nav>
 <a class="nav-cta" href="contact.html">Démarrer un projet <span>→</span></a>
-<button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-</div><nav class="mobile-nav"><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="lab.html">Lab</a></nav></header>
+<button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation-mobile">☰</button>
+</div><nav class="mobile-nav" id="navigation-mobile"><a aria-current="page" href="index.html">Accueil</a><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="lab.html">Lab</a></nav></header>
 <main>
 <section class="hero cinematic-hero" data-accent="violet">
-<div class="hero-ambient" aria-hidden="true"><i class="ambient-ring ring-one"></i><i class="ambient-ring ring-two"></i><i class="ambient-dot dot-one"></i><i class="ambient-dot dot-two"></i><span class="hero-grid-lines"></span></div>
-<div class="hero-scroll-cue" aria-hidden="true"><span>SCROLL</span><i></i></div>
 <div class="container hero-grid">
 <div class="reveal hero-copy">
 <div class="badge"><i></i> DISPONIBLE POUR DE NOUVEAUX PROJETS</div>
@@ -24,18 +23,75 @@
 <div class="actions"><a class="btn primary magnetic" href="services.html">Découvrir mes services <span>→</span></a><a class="btn secondary" href="projets.html">Voir mes réalisations</a></div>
 <div class="hero-proof"><span>Design sur mesure</span><span>Responsive</span><span>Code léger</span><span>SEO prêt à travailler</span></div>
 </div>
-<div class="hero-showcase hero-realistic-stage" aria-label="Aperçu réaliste du site sur ordinateur portable et smartphone">
-<img class="hero-realistic-devices" src="images/hero-devices-user.png" alt="Ordinateur portable et smartphone réalistes affichant une interface web sombre et violette">
-<span class="hero-realistic-glow" aria-hidden="true"></span>
+<div class="hero-showcase hero-realistic-stage hero-device-theatre" aria-label="Animation d’un ordinateur portable qui s’ouvre et d’un smartphone qui s’allume">
+  <div class="hero-laptop" aria-hidden="true">
+    <div class="hero-laptop-lid">
+      <div class="hero-laptop-bezel">
+        <div class="hero-web-screen">
+          <div class="hero-screen-nav"><b><i></i>STUDIO</b><span>Travaux</span><span>Expertise</span><span>Contact</span><em>Parlons-nous</em></div>
+          <div class="hero-screen-layout">
+            <div class="hero-screen-copy">
+              <small>DESIGN & DÉVELOPPEMENT</small>
+              <strong>Des expériences</strong>
+              <strong class="violet">simples à aimer.</strong>
+              <p>Des identités numériques précises pour des marques qui veulent compter.</p>
+              <button tabindex="-1">Voir les projets <i>↗</i></button>
+            </div>
+            <div class="hero-screen-art">
+              <div class="hero-art-grid"></div>
+              <div class="hero-art-index">01 <span>/ 03</span></div>
+              <div class="hero-art-orb"><i></i></div>
+              <div class="hero-art-note"><small>PROJET SÉLECTIONNÉ</small><strong>Forme & lumière</strong></div>
+            </div>
+          </div>
+          <div class="hero-screen-grid"><i><b>01</b>Stratégie</i><i><b>02</b>Identité</i><i><b>03</b>Développement</i></div>
+        </div>
+        <div class="hero-laptop-boot"><span></span></div>
+        <div class="hero-screen-shine"></div>
+      </div>
+    </div>
+    <div class="hero-laptop-hinge"></div>
+    <div class="hero-laptop-base">
+      <div class="hero-keyboard">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero-trackpad"></div>
+    </div>
+    <div class="hero-laptop-lip"></div>
+  </div>
+  <div class="hero-phone" aria-hidden="true">
+    <div class="hero-phone-frame">
+      <div class="hero-phone-island"></div>
+      <div class="hero-phone-screen">
+        <div class="phone-ui-nav"><b><i></i>STUDIO</b><em><span></span><span></span></em></div>
+        <small>DESIGN & DÉVELOPPEMENT</small>
+        <strong>Des expériences<br><em>simples à aimer.</em></strong>
+        <p>Une présence digitale claire, rapide et mémorable.</p>
+        <button tabindex="-1">Découvrir <i>↗</i></button>
+        <div class="phone-ui-art">
+          <div class="phone-art-index">01 <span>/ 03</span></div>
+          <i></i><b></b>
+          <small>FORME & LUMIÈRE</small>
+        </div>
+        <div class="phone-ui-foot"><span>Stratégie</span><span>Design</span><span>Code</span></div>
+      </div>
+      <div class="hero-phone-boot"><div class="boot-mark">T.</div><span></span></div>
+      <div class="hero-phone-glass"></div>
+    </div>
+  </div>
+  <span class="hero-device-shadow laptop-shadow" aria-hidden="true"></span>
+  <span class="hero-device-shadow phone-shadow" aria-hidden="true"></span>
 </div>
 </div></section>
 
 <section class="section-tight" data-accent="warm"><div class="container">
 <div class="section-head-row reveal"><div><span class="eyebrow">RÉALISATIONS</span><h2>Trois métiers.<br>Trois identités différentes.</h2></div><p>Chaque concept est pensé autour du secteur, de la cible et de l’action principale attendue du visiteur.</p></div>
 <div class="projects-grid premium-projects">
-<a class="project-card reveal" href="projets/restaurant.html"><img src="images/le-dragon-card.webp" alt="Concept de site Le Dragon"><div class="project-overlay"><span class="project-index">01</span><span class="project-open">Voir le projet ↗</span></div><div class="project-copy"><small>RESTAURANT / ÉPICERIE</small><h3>Le Dragon</h3><p>Une expérience sombre, chaleureuse et orientée réservation.</p><span class="link">Étude de cas →</span></div></a>
-<a class="project-card reveal" href="projets/studio-digital.html"><img src="images/nova-studio-card.webp" alt="Concept de site Nova Studio"><div class="project-overlay"><span class="project-index">02</span><span class="project-open">Voir le projet ↗</span></div><div class="project-copy"><small>STUDIO DIGITAL</small><h3>Nova Studio</h3><p>Une direction créative et technologique pour convertir rapidement.</p><span class="link">Étude de cas →</span></div></a>
-<a class="project-card reveal" href="projets/architecture.html"><img src="images/forma-studio-card.webp" alt="Concept de site Forma Studio"><div class="project-overlay"><span class="project-index">03</span><span class="project-open">Voir le projet ↗</span></div><div class="project-copy"><small>ARCHITECTURE</small><h3>Forma Studio</h3><p>Une interface éditoriale où l’architecture reste au premier plan.</p><span class="link">Étude de cas →</span></div></a>
+<a class="project-card reveal" href="projets/restaurant.html"><img src="images/le-dragon-card.webp" width="720" height="480" loading="lazy" decoding="async" alt="Aperçu photoréaliste du concept de site Le Dragon"><div class="project-overlay"><span class="project-index">01</span><span class="project-open">Voir le projet ↗</span></div><div class="project-copy"><small>RESTAURANT / ÉPICERIE</small><h3>Le Dragon</h3><p>Une expérience sombre, chaleureuse et orientée réservation.</p><span class="link">Étude de cas →</span></div></a>
+<a class="project-card reveal" href="projets/studio-digital.html"><img src="images/nova-studio-card.webp" width="720" height="480" loading="lazy" decoding="async" alt="Aperçu photoréaliste du concept de site Nova Studio"><div class="project-overlay"><span class="project-index">02</span><span class="project-open">Voir le projet ↗</span></div><div class="project-copy"><small>STUDIO DIGITAL</small><h3>Nova Studio</h3><p>Une direction créative et technologique pour convertir rapidement.</p><span class="link">Étude de cas →</span></div></a>
+<a class="project-card reveal" href="projets/architecture.html"><img src="images/forma-studio-card.webp" width="720" height="480" loading="lazy" decoding="async" alt="Aperçu photoréaliste du concept de site Forma Studio"><div class="project-overlay"><span class="project-index">03</span><span class="project-open">Voir le projet ↗</span></div><div class="project-copy"><small>ARCHITECTURE</small><h3>Forma Studio</h3><p>Une interface éditoriale où l’architecture reste au premier plan.</p><span class="link">Étude de cas →</span></div></a>
 </div><div class="center-action reveal"><a class="btn secondary" href="projets.html">Explorer toutes les réalisations →</a></div></div></section>
 
 
@@ -71,16 +127,56 @@
         <span class="eyebrow">RESPONSIVE EXPERIENCE</span>
         <h2>Le même niveau de détail,<br><span class="accent">sur chaque écran.</span></h2>
         <p>La version mobile n’est pas une version réduite du desktop. Navigation, hiérarchie, espacements et appels à l’action sont adaptés au contexte.</p>
-        <div class="device-tabs" role="presentation"><span class="active">Desktop</span><span>Tablet</span><span>Mobile</span></div>
-      </div>
-      <div class="device-stage" aria-hidden="true">
-        <div class="device-orbit-glow"></div>
-        <div class="mini-laptop">
-          <div class="mini-screen"><div class="mini-nav"></div><div class="mini-copy-line wide"></div><div class="mini-copy-line"></div><div class="mini-cta"></div><div class="mini-ui-grid"><i></i><i></i><i></i></div></div>
-          <div class="mini-base"></div>
+        <div class="device-tabs" aria-label="Choisir un aperçu responsive">
+          <button class="active" type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+          <button type="button" data-device="tablet" aria-pressed="false">Tablette</button>
+          <button type="button" data-device="mobile" aria-pressed="false">Mobile</button>
         </div>
-        <div class="mini-phone">
-          <div class="mini-phone-screen"><b></b><div class="mini-mobile-title"></div><div class="mini-mobile-card"></div><div class="mini-mobile-button"></div></div>
+      </div>
+      <div class="device-stage" data-active-device="desktop" aria-label="Démonstration animée du même site sur ordinateur, tablette et mobile">
+        <div class="device-orbit-glow"></div>
+        <div class="responsive-device desktop-device" data-device-panel="desktop">
+          <div class="desktop-frame">
+            <div class="device-camera"></div>
+            <div class="site-screen">
+              <div class="screen-browser"><i></i><i></i><i></i><span></span></div>
+              <div class="screen-site desktop-site">
+                <div class="screen-nav"><b></b><span></span><span></span><span></span><em></em></div>
+                <div class="screen-hero">
+                  <div class="screen-hero-copy"><small></small><strong></strong><strong class="short"></strong><p></p><i></i></div>
+                  <div class="screen-art"><span></span><span></span><b></b></div>
+                </div>
+                <div class="screen-cards"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="desktop-stand"><i></i></div>
+        </div>
+        <div class="responsive-device tablet-device" data-device-panel="tablet">
+          <div class="tablet-frame">
+            <div class="device-camera"></div>
+            <div class="site-screen tablet-screen">
+              <div class="screen-site tablet-site">
+                <div class="screen-nav"><b></b><span></span><span></span><em></em></div>
+                <div class="tablet-hero"><small></small><strong></strong><strong></strong><p></p><i></i></div>
+                <div class="tablet-art"><span></span><b></b></div>
+                <div class="tablet-cards"><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="responsive-device mobile-device" data-device-panel="mobile">
+          <div class="mobile-frame">
+            <div class="mobile-speaker"></div>
+            <div class="site-screen mobile-screen">
+              <div class="screen-site mobile-site">
+                <div class="screen-nav"><b></b><em></em></div>
+                <div class="mobile-hero"><small></small><strong></strong><strong></strong><p></p><i></i></div>
+                <div class="mobile-art"><span></span><b></b></div>
+                <div class="mobile-content"><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -89,10 +185,33 @@
 
 <section class="section" data-accent="cyan"><div class="container">
 <div class="section-head-row reveal"><div><span class="eyebrow">EXEMPLE DE REFONTE</span><h2>Passer d’un site fonctionnel<br>à une expérience qui inspire confiance.</h2></div><p>Démonstration visuelle : ce comparatif illustre une approche de refonte, il ne s’agit pas d’un client réel.</p></div>
-<div class="before-after reveal" data-compare>
-<div class="compare-panel compare-before"><span class="compare-label">AVANT — EXEMPLE</span><div class="legacy-site"><div class="legacy-nav"></div><div class="legacy-title"></div><div class="legacy-copy"></div><div class="legacy-copy short"></div><div class="legacy-button"></div><div class="legacy-boxes"><i></i><i></i><i></i></div></div></div>
-<div class="compare-panel compare-after"><span class="compare-label">APRÈS — DIRECTION PREMIUM</span><div class="modern-site"><div class="modern-kicker"></div><div class="modern-title"></div><div class="modern-copy"></div><div class="modern-button"></div><div class="modern-visual"><span></span></div></div></div>
-<div class="compare-divider" aria-hidden="true"><span>↔</span></div>
+<div class="before-after reveal" data-compare style="--compare:48%">
+  <div class="compare-caption compare-caption-before"><span>AVANT</span><small>Site générique</small></div>
+  <div class="compare-caption compare-caption-after"><span>APRÈS</span><small>Direction premium</small></div>
+  <div class="compare-site compare-premium" aria-hidden="true">
+    <div class="premium-shade"></div>
+    <div class="premium-nav"><b><i></i>STUDIO</b><div><span>Expertise</span><span>Réalisations</span><span>À propos</span></div><em>Nous contacter ↗</em></div>
+    <div class="premium-visual" aria-hidden="true">
+      <div class="premium-visual-grid"></div>
+      <div class="premium-visual-orb"><i></i><i></i><b></b></div>
+      <span class="premium-visual-index">01 / 03</span>
+      <small>APPROCHE SUR MESURE</small>
+    </div>
+    <div class="premium-copy"><small>IDENTITÉ · DESIGN · DÉVELOPPEMENT</small><strong>Votre expertise,<br><em>mise en valeur.</em></strong><p>Une expérience claire et distinctive, pensée pour inspirer confiance dès les premières secondes.</p><div><i>Découvrir l’approche</i><span>Voir les projets →</span></div></div>
+    <div class="premium-foot"><span>CLARTÉ</span><span>RESPONSIVE</span><span>CONVERSION</span></div>
+  </div>
+  <div class="compare-site compare-legacy" aria-hidden="true">
+    <div class="legacy-top"><b>LOGO</b><span>ACCUEIL &nbsp; | &nbsp; NOS SERVICES &nbsp; | &nbsp; CONTACT</span></div>
+    <div class="legacy-banner">Bienvenue sur notre site internet !</div>
+    <div class="legacy-main">
+      <div class="legacy-text"><strong>Présentation de notre activité</strong><small>Entreprise locale — services et conseils</small><p>Bienvenue sur notre site. Nous vous proposons différents services adaptés à vos besoins. Contactez-nous pour plus d’informations.</p><button tabindex="-1">EN SAVOIR PLUS</button></div>
+      <div class="legacy-stock"><span>IMAGE</span><i></i><b></b></div>
+    </div>
+    <div class="legacy-columns"><div><b>Nos services</b><span>Découvrez toutes nos prestations</span></div><div><b>À propos</b><span>Une entreprise à votre écoute</span></div><div><b>Nous contacter</b><span>Formulaire et coordonnées</span></div></div>
+    <div class="legacy-footer">© 2026 — Tous droits réservés</div>
+  </div>
+  <input class="compare-range" type="range" min="12" max="88" value="48" aria-label="Faire glisser pour comparer le site avant et après">
+  <div class="compare-divider" aria-hidden="true"><span><i>‹</i><i>›</i></span></div>
 </div></div></section>
 
 

@@ -1,23 +1,25 @@
 <!doctype html><html lang="fr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow,max-image-preview:large"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="description" content="Contact pour un projet de site web."><meta name="theme-color" content="#050610">
 <title>Contact — Tom Webdesign</title>
 <link rel="stylesheet" href="css/style.css">
 <script defer src="js/script.js"></script>
 </head><body><header class="header"><div class="container navbar">
 <a class="logo" href="index.html"><span class="brand-symbol">T</span><span class="brand-word">TOM<span>.</span><small>WEB DESIGN</small></span></a>
-<nav class="desktop-nav"><a class="" href="index.html">Accueil</a><a class="" href="services.html">Services</a><a class="" href="projets.html">Réalisations</a><a class="" href="tarifs.html">Tarifs</a><a class="" href="a-propos.html">À propos</a><a class="active" href="contact.html">Contact</a><a class="" href="lab.html">Lab</a></nav>
+<nav class="desktop-nav"><a class="" href="index.html">Accueil</a><a class="" href="services.html">Services</a><a class="" href="projets.html">Réalisations</a><a class="" href="tarifs.html">Tarifs</a><a class="" href="a-propos.html">À propos</a><a class="active" aria-current="page" href="contact.html">Contact</a><a class="" href="lab.html">Lab</a></nav>
 <a class="nav-cta" href="contact.html">Parler de votre projet &nbsp; →</a>
-<button class="menu-btn" aria-label="Ouvrir le menu">☰</button>
+<button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
 </div><nav class="mobile-nav"><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="lab.html">Lab</a></nav></header>
 <main><section class="page-hero"><div class="container reveal"><span class="eyebrow">CONTACT</span><h1>Parlez-moi de <span class="accent">votre projet.</span></h1><p>Le formulaire est actuellement en démonstration. Il sera connecté ensuite à un service sécurisé.</p></div></section>
 <section class="section"><div class="container contact-grid">
 <div class="reveal"><h2>Quelques informations suffisent.</h2><p class="muted" style="margin-top:15px">Présentez votre activité, le type de site souhaité et votre objectif.</p></div>
 <div class="form-box reveal"><form id="contact-form"><div class="form-grid">
-<div class="field"><label>Nom</label><input required></div><div class="field"><label>Entreprise</label><input></div>
-<div class="field"><label>Email</label><input type="email" required></div><div class="field"><label>Type de site</label><select><option>Site vitrine</option><option>Refonte</option><option>Autre</option></select></div>
-<div class="field full"><label>Votre projet</label><textarea required></textarea></div>
-<div class="field full"><button class="btn primary" type="submit">Envoyer ma demande</button><div id="status" class="notice">Aucune donnée n’est envoyée pour l’instant.</div></div>
+<div class="field"><label for="nom">Nom</label><input id="nom" name="nom" autocomplete="name" required></div><div class="field"><label for="entreprise">Entreprise</label><input id="entreprise" name="entreprise" autocomplete="organization"></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></div><div class="field"><label for="type-site">Type de site</label><select id="type-site" name="type-site"><option>Site vitrine</option><option>Refonte</option><option>Autre</option></select></div>
+<div class="field full"><label for="projet">Votre projet</label><textarea id="projet" name="projet" required></textarea></div>
+<div class="field full"><button class="btn primary" type="submit">Envoyer ma demande</button><div id="status" class="notice" aria-live="polite">Aucune donnée n’est envoyée pour l’instant.</div></div>
 </div></form></div></div></section></main><footer><div class="container footer-row">
 <a class="logo" href="index.html"><span class="brand-symbol">T</span><span class="brand-word">TOM<span>.</span><small>WEB DESIGN</small></span></a>
 <div class="footer-links"><a href="services.html">Services</a><a href="projets.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="contact.html">Contact</a></div>
